@@ -4,7 +4,7 @@ Original project year supplied by the author: **2024**. This reconstruction star
 
 ## Current stage
 
-Core implementation and local documentation are complete. Final browser coverage and a clean-install run remain open. The Git repository is published at https://github.com/GuilhermeZalla/sniply on the main branch. A release has not been created.
+The core application, public frontend demo and portfolio entry are published. Remaining work is browser coverage for secondary screens, a clean-install verification, refreshed README captures, and release preparation. The Git repository is published at https://github.com/GuilhermeZalla/sniply on the main branch. A release has not been created.
 
 ## Completed
 
@@ -30,20 +30,20 @@ Core implementation and local documentation are complete. Final browser coverage
 ## In progress
 
 - [x] Desktop, tablet, and phone layout checks for overview and library; mobile menu Escape check. Updated desktop/mobile captures and walkthroughs use fictional fixture data.
-- [ ] Complete keyboard and responsive checks for authentication, public sharing, settings, groups, and the editor. Existing captures and responsive CSS were reviewed statically; live browser verification was interrupted by the computer-use approval limit.
+- [ ] Finish keyboard and responsive checks for authentication, public sharing, settings, groups, and the editor at desktop, tablet and phone sizes.
 - [x] English README with current setup, features, limitations, and updated media.
 - [x] Separate four-page interview PDF, visually verified after updating theme information; no README reference.
 - [x] Docker Compose configuration and API/web image builds passed.
-- [ ] Complete a fresh installation with an isolated database. The Docker engine was unavailable after the session interruption.
+- [ ] Verify a clean first-time installation with an isolated database and document any setup issues found.
 - [x] Portfolio cover and case-study images refreshed from the live workbench demo after the navigation redesign.
-- [ ] Refresh the README screenshots after the workbench redesign; those captures still show the earlier sidebar layout.
+- [ ] Recapture and replace README screenshots and walkthroughs to show the current horizontal-navigation workbench.
 
 ## Remaining external/release decisions
 
-- The origin remote is https://github.com/GuilhermeZalla/sniply.git, and main has been pushed. A tagged release remains pending.
-- Production hosting, domain, HTTPS, SMTP credentials and deployment hardening are not configured.
-- Password recovery is tested through the local development mail drop; real SMTP delivery needs valid provider settings.
-- Monaco is lazy-loaded; its language workers still produce large build assets.
+- Create and verify a versioned GitHub release after the remaining checks are complete.
+- Full-stack production hosting, domain, HTTPS, SMTP credentials and deployment hardening remain future work. The public demo is frontend-only and stores fictional data in each visitor browser.
+- Password recovery works with the local development mail drop; real SMTP delivery needs valid provider settings.
+- Review Monaco language-worker asset size during release preparation; the editor is lazy-loaded.
 
 ## Documentation review
 
