@@ -10,7 +10,7 @@ A personal code snippet manager with a React interface and an ASP.NET Core REST 
 
 ## Public demo
 
-The [frontend demo](https://guilhermezalla.github.io/sniply/) is prepared for GitHub Pages with fictional sample data stored in the browser. GitHub Pages must be enabled with GitHub Actions as its source before this link becomes public. You can browse, search, edit, favorite, share, and reset sample snippets. It does not connect to the ASP.NET Core API or PostgreSQL, and it does not offer real accounts, email, or cross-device synchronization.
+The [public frontend demo](https://guilhermezalla.github.io/sniply/) runs on GitHub Pages with fictional sample data stored in the browser. You can browse, search, edit, favorite, share, and reset sample snippets. It does not connect to the ASP.NET Core API or PostgreSQL, and it does not offer real accounts, email, or cross-device synchronization.
 
 To build this static demo locally in PowerShell, set `$env:VITE_PUBLIC_DEMO = 'true'` and run `npm run build --prefix frontend`. The normal build continues to use the real API.
 
@@ -193,7 +193,7 @@ Monaco's editor/language workers produce large lazy-loaded assets and a bundle-s
 
 ## Current scope and next steps
 
-The implemented application runs locally with a real API and database. No public deployment or hosted demo is configured. Five workspace palettes are available, including two dark options. Production email, hosting, backups and operational setup require deployment-specific configuration. See [STATUS.md](STATUS.md) for current verification evidence and pending work.
+The full application runs locally with a real API and database. A frontend-only public demo is available on GitHub Pages; hosting the full application remains pending. Five workspace palettes are available, including two dark options. Production email, hosting, backups and operational setup require deployment-specific configuration. See [STATUS.md](STATUS.md) for current verification evidence and pending work.
 
 ## Use of artificial intelligence
 

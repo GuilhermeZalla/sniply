@@ -22,10 +22,10 @@ Core implementation and local documentation are complete. Final browser coverage
 - [x] Initial migration generated and applied only to the newly created Sniply PostgreSQL container.
 - [x] Real PostgreSQL smoke check: registration/login, groups, six fictional snippets, favorites and overview totals.
 - [x] Seven isolated API tests passed, including ownership, search/pagination, sharing, refresh/logout, password-reset privacy and token revocation, profile validation and group removal.
-- [x] Three frontend helper tests passed. Type checking and production build passed.
+- [x] Five frontend tests passed, including demo state and request behavior. Type checking and both normal and demo production builds passed.
 - [x] Dependency audit: zero vulnerabilities after pinning the corrected DOMPurify transitive version.
 - [x] Docker development configuration and GitHub Actions verification workflow created.
-- [x] Separate static public demo with fictional browser data, local editing/search/favorites/sharing, reset control, and GitHub Pages deployment workflow.
+- [x] Separate static public demo with fictional browser data, local editing/search/favorites/sharing, reset control, and GitHub Pages deployment workflow. The HTML, JavaScript and CSS at https://guilhermezalla.github.io/sniply/ returned HTTP 200 on 2026-11-25.
 
 ## In progress
 
@@ -37,8 +37,6 @@ Core implementation and local documentation are complete. Final browser coverage
 - [ ] Complete a fresh installation with an isolated database. The Docker engine was unavailable after the session interruption.
 
 ## Remaining external/release decisions
-
-- GitHub Pages is not enabled for this repository. The first deployment workflow failed at configure-pages; select GitHub Actions under Settings > Pages and rerun the workflow. The public demo URL currently returns 404.
 
 - The origin remote is https://github.com/GuilhermeZalla/sniply.git, and main has been pushed. A tagged release remains pending.
 - Production hosting, domain, HTTPS, SMTP credentials and deployment hardening are not configured.
