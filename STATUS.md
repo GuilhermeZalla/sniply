@@ -25,6 +25,7 @@ Core implementation and local documentation are complete. Final browser coverage
 - [x] Three frontend helper tests passed. Type checking and production build passed.
 - [x] Dependency audit: zero vulnerabilities after pinning the corrected DOMPurify transitive version.
 - [x] Docker development configuration and GitHub Actions verification workflow created.
+- [x] Separate static public demo with fictional browser data, local editing/search/favorites/sharing, reset control, and GitHub Pages deployment workflow.
 
 ## In progress
 

@@ -15,6 +15,7 @@ import { useData } from "../hooks/useData";
 import { api, errorMessage, json } from "../lib/api";
 import type { Language, User } from "../lib/types";
 import { getTheme, setTheme, themes, type ThemeId } from "../theme";
+import { isPublicDemo, resetDemo } from "../lib/demo";
 export function SettingsPage() {
   const { user, setUser, signOut } = useAuth();
   const [themeId, setThemeId] = useState<ThemeId>(getTheme);
@@ -114,6 +115,7 @@ export function SettingsPage() {
           ))}
         </div>
       </section>
+      {isPublicDemo && <section className="panel demo-reset"><h2>Demo data</h2><p className="muted">Your changes stay in this browser. Start over whenever you want.</p><Button secondary onClick={() => { resetDemo(); window.location.reload(); }}>Reset sample data</Button></section>}
       <div className="settings-grid">
         <section className="panel">
           <h2>Profile & editor</h2>
@@ -185,7 +187,7 @@ export function SettingsPage() {
             </Button>
           </form>
         </section>
-        <section className="panel">
+        {!isPublicDemo && <section className="panel">
           <h2>Change password</h2>
           <p className="muted">
             Changing your password signs you out on all devices.
@@ -205,7 +207,7 @@ export function SettingsPage() {
               Update password
             </Button>
           </form>
-        </section>
+        </section>}
         <section className="panel">
           <h2>Custom languages</h2>
           <p className="muted">

@@ -1693,3 +1693,9 @@ input::placeholder, textarea::placeholder { color: var(--muted); }
   .filters label { flex: 1 1 calc(50% - 6px); min-width: 0; }
   .filters label:last-child { flex-basis: 100%; }
 }
+
+.demo-notice { display: flex; gap: 16px; align-items: center; padding: 9px 40px; background: var(--accent-subtle); color: var(--accent-ink); border-bottom: 1px solid var(--line); font: 10px "JetBrains Mono", monospace; letter-spacing: .04em; }
+.demo-notice span { color: var(--ink); font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0; }
+.demo-reset { margin-bottom: 20px; }
+.demo-reset .button { margin-top: 14px; }
+@media (max-width: 650px) { .demo-notice { padding: 9px 18px; flex-wrap: wrap; gap: 4px 12px; } }

@@ -1,4 +1,5 @@
 import type { User } from "./types";
+import { demoRequest, demoUser, isPublicDemo } from "./demo";
 let accessToken: string | null = null;
 let refreshing: Promise<{ accessToken: string; user: User }> | null = null;
 export class ApiError extends Error {
@@ -28,6 +29,7 @@ async function response<T>(r: Response): Promise<T> {
   return data as T;
 }
 export async function refresh() {
+  if (isPublicDemo) return { accessToken: "demo", user: demoUser() };
   if (!refreshing)
     refreshing = fetch("/api/auth/refresh", {
       method: "POST",
@@ -48,6 +50,7 @@ export async function api<T>(
   options: RequestInit = {},
   retry = true,
 ): Promise<T> {
+  if (isPublicDemo) return demoRequest<T>(path, options);
   const headers = new Headers(options.headers);
   if (options.body) headers.set("Content-Type", "application/json");
   if (accessToken) headers.set("Authorization", "Bearer " + accessToken);
@@ -92,6 +95,7 @@ export async function login(
   password: string,
   rememberMe: boolean,
 ) {
+  if (isPublicDemo) throw new Error("Sign-in is unavailable in the public demo.");
   const data = await api<{ accessToken: string; user: User }>(
     "/auth/login",
     { method: "POST", body: JSON.stringify({ email, password, rememberMe }) },
@@ -101,6 +105,7 @@ export async function login(
   return data.user;
 }
 export async function logout() {
+  if (isPublicDemo) return;
   try {
     await api("/auth/logout", { method: "POST" }, false);
   } finally {

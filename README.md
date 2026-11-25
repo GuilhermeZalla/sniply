@@ -8,6 +8,12 @@ A personal code snippet manager with a React interface and an ASP.NET Core REST 
 
 **Stack:** React · TypeScript · Vite · Tailwind CSS · Monaco Editor · TanStack Query · ASP.NET Core · C# · Entity Framework Core · PostgreSQL
 
+## Public demo
+
+The [public frontend demo](https://guilhermezalla.github.io/sniply/) runs on GitHub Pages with fictional sample data stored in this browser. You can browse, search, edit, favorite, share, and reset sample snippets. It does not connect to the ASP.NET Core API or PostgreSQL, and it does not offer real accounts, email, or cross-device synchronization.
+
+To build this static demo locally in PowerShell, set `$env:VITE_PUBLIC_DEMO = 'true'` and run `npm run build --prefix frontend`. The normal build continues to use the real API.
+
 ## Preview
 
 The screenshots below show the running React interface with a temporary local fixture API and fictional sample data. The real API and PostgreSQL flows were verified separately. These are application captures, not design mockups.

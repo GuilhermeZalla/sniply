@@ -23,6 +23,7 @@ import {
 import { useAuth } from "../auth";
 import { Brand, Loading } from "../components/ui";
 import { initials } from "../lib/library";
+import { isPublicDemo } from "../lib/demo";
 export function Shell() {
   const { user, loading, signOut } = useAuth();
   const [open, setOpen] = useState(false);
@@ -111,12 +112,12 @@ export function Shell() {
             <strong>{user.name}</strong>
             <small>Code library</small>
           </div>
-          <button
+          {!isPublicDemo && <button
             aria-label="Sign out"
             onClick={() => void signOut().catch(() => {})}
           >
             <LogOut size={17} />
-          </button>
+          </button>}
         </div>
       </aside>
       {open && (
@@ -164,6 +165,7 @@ export function Shell() {
             <span>New snippet</span>
           </Link>}
         </header>
+        {isPublicDemo && <div className="demo-notice" role="status">PUBLIC DEMO <span>Sample data is saved only in this browser.</span></div>}
         <main id="main-content" className="content">
           <Outlet />
         </main>

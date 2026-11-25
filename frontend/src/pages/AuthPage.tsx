@@ -10,6 +10,7 @@ import { useAuth } from "../auth";
 import { Password } from "../components/Password";
 import { Brand, Button, ErrorBox, Notice } from "../components/ui";
 import { api, errorMessage, json, login } from "../lib/api";
+import { isPublicDemo } from "../lib/demo";
 export function AuthPage({ mode = "login" }: { mode?: string }) {
   const { user, setUser } = useAuth();
   const nav = useNavigate();
@@ -21,7 +22,7 @@ export function AuthPage({ mode = "login" }: { mode?: string }) {
   const register = mode === "register",
     forgot = mode === "forgot",
     reset = mode === "reset";
-  if (user && mode === "login") return <Navigate to="/" replace />;
+  if (isPublicDemo || (user && mode === "login")) return <Navigate to="/" replace />;
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(e.currentTarget));

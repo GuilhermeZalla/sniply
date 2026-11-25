@@ -14,6 +14,7 @@ import {
 import { useData } from "../hooks/useData";
 import { api, errorMessage, json } from "../lib/api";
 import { localDate } from "../lib/library";
+import { isPublicDemo } from "../lib/demo";
 import type { Snippet } from "../lib/types";
 const CodeEditor = lazy(() => import("../components/CodeEditor"));
 export function Detail() {
@@ -130,7 +131,7 @@ export function Detail() {
           </p>
           {s.publicSlug && (
             <Link className="public-link" to={"/share/" + s.publicSlug}>
-              {location.origin}/share/{s.publicSlug}
+              {isPublicDemo ? location.origin + location.pathname + "#/share/" + s.publicSlug : location.origin + "/share/" + s.publicSlug}
             </Link>
           )}
         </div>
@@ -147,7 +148,7 @@ export function Detail() {
             <Button
               secondary
               onClick={() =>
-                void copy(location.origin + "/share/" + s.publicSlug)
+                void copy(isPublicDemo ? location.origin + location.pathname + "#/share/" + s.publicSlug : location.origin + "/share/" + s.publicSlug)
               }
             >
               Copy link
