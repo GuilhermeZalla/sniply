@@ -4,7 +4,7 @@ Original project year supplied by the author: **2024**. This reconstruction star
 
 ## Current stage
 
-Core implementation and local documentation are complete. Final browser coverage and a clean-install run remain open. A local Git repository has been initialized. No remote was supplied; push and release have not been performed.
+Core implementation and local documentation are complete. Final browser coverage and a clean-install run remain open. The Git repository is published at https://github.com/GuilhermeZalla/sniply on the main branch. A release has not been created.
 
 ## Completed
 
@@ -37,7 +37,7 @@ Core implementation and local documentation are complete. Final browser coverage
 
 ## Remaining external/release decisions
 
-- The intended remote is https://github.com/GuilhermeZalla/sniply.git. It has not been added; push and release remain pending by request.
+- The origin remote is https://github.com/GuilhermeZalla/sniply.git, and main has been pushed. A tagged release remains pending.
 - Production hosting, domain, HTTPS, SMTP credentials and deployment hardening are not configured.
 - Password recovery is tested through the local development mail drop; real SMTP delivery needs valid provider settings.
 - Monaco is lazy-loaded; its language workers still produce large build assets.
