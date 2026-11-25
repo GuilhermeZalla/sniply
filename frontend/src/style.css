@@ -1832,3 +1832,14 @@ input::placeholder, textarea::placeholder { color: var(--muted); }
   .stats strong { font-size: 21px; }
   .snippet-row { padding-inline: 4px; }
 }
+
+.library-kicker { color: var(--accent-ink); margin-bottom: 12px; font-family: "JetBrains Mono", monospace; }
+.snippet-list { counter-reset: file; }
+.snippet-row::before {
+  counter-increment: file; content: counter(file, decimal-leading-zero);
+  flex: 0 0 28px; align-self: flex-start; margin-top: 3px;
+  color: var(--muted); font: 11px/1.6 "JetBrains Mono", monospace;
+}
+@media (max-width: 650px) {
+  .snippet-row::before { display: none; }
+}

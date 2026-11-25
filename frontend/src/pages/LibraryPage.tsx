@@ -20,6 +20,7 @@ export function LibraryPage({ favorites = false }: { favorites?: boolean }) {
   }
   return (
     <>
+      <p className="eyebrow library-kicker">{favorites ? "INDEX / SAVED FAVORITES" : "INDEX / CODE FILES"}</p>
       <Heading
         title={favorites ? "Favorites" : activeGroup?.name || "All snippets"}
         description={
