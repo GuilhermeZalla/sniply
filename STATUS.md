@@ -35,6 +35,7 @@ Core implementation and local documentation are complete. Final browser coverage
 - [x] Separate four-page interview PDF, visually verified after updating theme information; no README reference.
 - [x] Docker Compose configuration and API/web image builds passed.
 - [ ] Complete a fresh installation with an isolated database. The Docker engine was unavailable after the session interruption.
+- [ ] Refresh the README and portfolio screenshots after the workbench redesign. The published cover fills its frame, but the image still shows the earlier sidebar layout.
 
 ## Remaining external/release decisions
 
