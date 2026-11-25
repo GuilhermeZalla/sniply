@@ -1,0 +1,15 @@
+**/node_modules/
+**/dist/
+**/bin/
+**/obj/
+**/*.tsbuildinfo
+.env
+.env.*
+!.env.example
+**/.keys/
+**/.mail/
+**/*.db
+**/*.db-*
+.vs/
+.vscode/
+tmp/

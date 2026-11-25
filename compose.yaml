@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: sniply
+      POSTGRES_USER: sniply
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports: ["127.0.0.1:5438:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sniply -d sniply"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    build: ./backend/Sniply.Api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5088
+      ConnectionStrings__Default: Host=db;Database=sniply;Username=sniply;Password=${POSTGRES_PASSWORD}
+      Jwt__Key: ${Jwt__Key:?Set Jwt__Key in .env}
+      Jwt__Issuer: sniply
+      Jwt__Audience: sniply-web
+      Cookies__Secure: "false"
+      Frontend__Url: http://localhost:5173
+      DataProtection__Path: /state/keys
+      Mail__DropDirectory: /state/mail
+      Mail__Host: ${Mail__Host:-}
+      Mail__Port: ${Mail__Port:-587}
+      Mail__Tls: ${Mail__Tls:-true}
+      Mail__Username: ${Mail__Username:-}
+      Mail__Password: ${Mail__Password:-}
+      Mail__From: ${Mail__From:-sniply@example.test}
+    ports: ["127.0.0.1:5088:5088"]
+    volumes: ["api-state:/state"]
+    depends_on:
+      db:
+        condition: service_healthy
+  web:
+    build: ./frontend
+    ports: ["127.0.0.1:5173:5173"]
+    environment:
+      API_PROXY: http://api:5088
+    depends_on: [api]
+volumes:
+  postgres-data:
+  api-state:
