@@ -67,7 +67,7 @@ export function Shell() {
   ] as const;
   return (
     <div className="workspace">
-      <aside
+      <header
         ref={drawer}
         className={open ? "sidebar open" : "sidebar"}
         inert={mobile && !open}
@@ -97,7 +97,7 @@ export function Shell() {
           Close
         </button>
         <Brand />
-        <p className="eyebrow nav-label">YOUR LIBRARY</p>
+        <p className="eyebrow nav-label">LIBRARY</p>
         <nav aria-label="Main navigation">
           {items.map(([to, label, Icon]) => (
             <NavLink key={to} to={to} end onClick={() => setOpen(false)}>
@@ -119,7 +119,7 @@ export function Shell() {
             <LogOut size={17} />
           </button>}
         </div>
-      </aside>
+      </header>
       {open && (
         <button
           className="scrim"
@@ -138,7 +138,7 @@ export function Shell() {
             <Menu size={20} />
           </button>
           <span className="breadcrumb">
-            Workspace <ChevronRight size={13} />{" "}
+            Library <ChevronRight size={13} />{" "}
             {loc.pathname === "/" ? "Overview" : loc.pathname.split("/")[1]}
           </span>
           {!hasPageSearch && <form
@@ -170,7 +170,7 @@ export function Shell() {
           <Outlet />
         </main>
         <footer className="workspace-footer">
-          SNIPLY / PERSONAL CODE LIBRARY
+          SNIPLY / KEEP WHAT WORKS
         </footer>
       </div>
     </div>

@@ -18,7 +18,7 @@ Core implementation and local documentation are complete. Final browser coverage
 - [x] Profile and editor preferences, responsive navigation and accessible confirmation dialogs.
 - [x] Five browser-persisted appearance themes (A default, B-E optional), with Monaco light/dark mode and matching brand/favicon colors.
 - [x] Authentication redesigned as a focused access panel over a subdued snippet library preview; login, registration and recovery form logic retained.
-- [x] Workspace refreshed with a dark code-library navigation, compact dashboard totals, a recent-snippet entry point, search-first library and restrained list styling. Removed repeated overview content and duplicate library toolbar actions.
+- [x] Workspace moved to a horizontal file-index navigation, with a code-preview entry point, typographic library totals, and a border-led recent-files list. The same React components and theme tokens serve the full app and public demo.
 - [x] Initial migration generated and applied only to the newly created Sniply PostgreSQL container.
 - [x] Real PostgreSQL smoke check: registration/login, groups, six fictional snippets, favorites and overview totals.
 - [x] Seven isolated API tests passed, including ownership, search/pagination, sharing, refresh/logout, password-reset privacy and token revocation, profile validation and group removal.

@@ -20,19 +20,19 @@ export function Dashboard() {
   return (
     <>
       <div className="dashboard-intro">
-        <div>
-          <p className="eyebrow">SNIPLY / OVERVIEW</p>
+        <div className="dashboard-heading">
+          <p className="eyebrow">INDEX / 01</p>
           <Heading
-            title="Your code library"
+            title="Keep what works."
             description={"Welcome back, " + user?.name.split(" ")[0] + ". Find what you need and keep building."}
           />
         </div>
         {d.recent[0] && (
           <Link className="resume-snippet" to={"/snippets/" + d.recent[0].id}>
-            <span>RECENTLY UPDATED / {d.recent[0].language}</span>
+            <span>LAST FILE / {d.recent[0].language}</span>
             <strong>{d.recent[0].title}</strong>
-            <small>{d.recent[0].description || "Open this snippet to view the code."}</small>
-            <span className="resume-action">Open snippet →</span>
+            <pre>{d.recent[0].code?.split("\n").slice(0, 7).join("\n") || d.recent[0].description || "Open to read the saved code."}</pre>
+            <span className="resume-action">Open file →</span>
           </Link>
         )}
       </div>
@@ -51,7 +51,7 @@ export function Dashboard() {
       <div className="overview-grid">
         <section className="panel">
           <div className="section-heading">
-            <h2>Recently updated</h2>
+            <h2>Recently updated <span className="section-count">{String(d.recent.length).padStart(2, "0")}</span></h2>
             <Link to="/snippets">
               View all <span aria-hidden="true">→</span>
             </Link>
@@ -60,8 +60,8 @@ export function Dashboard() {
         </section>
         <aside className="overview-side">
           <section className="panel">
-            <p className="eyebrow">AT A GLANCE</p>
-            <h2>Your languages</h2>
+            <p className="eyebrow">INDEX / 02</p>
+            <h2>Languages</h2>
             {d.languages.length ? (
               d.languages.map((l) => (
                 <div className="distribution" key={l.id}>
