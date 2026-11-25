@@ -10,7 +10,7 @@ A personal code snippet manager with a React interface and an ASP.NET Core REST 
 
 ## Public demo
 
-The [public frontend demo](https://guilhermezalla.github.io/sniply/) runs on GitHub Pages with fictional sample data stored in this browser. You can browse, search, edit, favorite, share, and reset sample snippets. It does not connect to the ASP.NET Core API or PostgreSQL, and it does not offer real accounts, email, or cross-device synchronization.
+The [frontend demo](https://guilhermezalla.github.io/sniply/) is prepared for GitHub Pages with fictional sample data stored in the browser. GitHub Pages must be enabled with GitHub Actions as its source before this link becomes public. You can browse, search, edit, favorite, share, and reset sample snippets. It does not connect to the ASP.NET Core API or PostgreSQL, and it does not offer real accounts, email, or cross-device synchronization.
 
 To build this static demo locally in PowerShell, set `$env:VITE_PUBLIC_DEMO = 'true'` and run `npm run build --prefix frontend`. The normal build continues to use the real API.
 

@@ -38,6 +38,8 @@ Core implementation and local documentation are complete. Final browser coverage
 
 ## Remaining external/release decisions
 
+- GitHub Pages is not enabled for this repository. The first deployment workflow failed at configure-pages; select GitHub Actions under Settings > Pages and rerun the workflow. The public demo URL currently returns 404.
+
 - The origin remote is https://github.com/GuilhermeZalla/sniply.git, and main has been pushed. A tagged release remains pending.
 - Production hosting, domain, HTTPS, SMTP credentials and deployment hardening are not configured.
 - Password recovery is tested through the local development mail drop; real SMTP delivery needs valid provider settings.

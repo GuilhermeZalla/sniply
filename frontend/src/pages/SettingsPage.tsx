@@ -138,17 +138,18 @@ export function SettingsPage() {
                 name="email"
                 type="email"
                 defaultValue={user?.email}
+                disabled={isPublicDemo}
                 required
               />
             </label>
-            <label>
+            {!isPublicDemo && <label>
               Current password <small>(required to change email)</small>
               <input
                 type="password"
                 name="currentPassword"
                 autoComplete="current-password"
               />
-            </label>
+            </label>}
             <div className="two-fields">
               <label>
                 Default language
