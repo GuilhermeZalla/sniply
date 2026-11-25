@@ -29,7 +29,7 @@ Core implementation and local documentation are complete. Final browser coverage
 ## In progress
 
 - [x] Desktop, tablet, and phone layout checks for overview and library; mobile menu Escape check. Updated desktop/mobile captures and walkthroughs use fictional fixture data.
-- [ ] Complete keyboard and responsive checks for all remaining pages. Browser verification was interrupted by the computer-use approval limit.
+- [ ] Complete keyboard and responsive checks for authentication, public sharing, settings, groups, and the editor. Existing captures and responsive CSS were reviewed statically; live browser verification was interrupted by the computer-use approval limit.
 - [x] English README with current setup, features, limitations, and updated media.
 - [x] Separate four-page interview PDF, visually verified after updating theme information; no README reference.
 - [x] Docker Compose configuration and API/web image builds passed.
@@ -37,7 +37,7 @@ Core implementation and local documentation are complete. Final browser coverage
 
 ## Remaining external/release decisions
 
-- No remote/repository URL was supplied. Git publication and a release remain unconfigured.
+- The intended remote is https://github.com/GuilhermeZalla/sniply.git. It has not been added; push and release remain pending by request.
 - Production hosting, domain, HTTPS, SMTP credentials and deployment hardening are not configured.
 - Password recovery is tested through the local development mail drop; real SMTP delivery needs valid provider settings.
 - Monaco is lazy-loaded; its language workers still produce large build assets.
